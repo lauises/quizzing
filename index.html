@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/diag-card.css">
+</head>
+<body>
+
+
+	<div id="quiz-environment">
+		<!-- <div class="test"></div> -->
+		
+		<div class="question">
+			<img class="logo" src="img/logo-w.png" alt="logo">
+			<h2>Sharon or Scarlett</h2>
+			<h3>Choose one to continue</h3>
+		</div>
+
+		<div class="diag-card">
+			<div class="left select">Sharon</div>
+			<img src="img/diag-card-1.jpg" alt="selection card">
+			<div class="right select">Scarlett</div>
+		</div>
+
+		<div class="darken darken-left"></div>
+		<div class="darken darken-right"></div>
+
+		<!-- <img class="poly poly-left" src="img/poly.svg" alt="left polygons">
+		<img class="poly poly-right" src="img/poly.svg" alt="right polygons"> -->
+
+		<img class="poly poly-left" src="img/shapes-leaf.png" alt="left polygons">
+		<img class="poly poly-right" src="img/shapes-leaf.png" alt="right polygons">
+
+		<div class="bg">
+			<img class="bg-stars" src="img/bg-trees.jpeg" alt="background">
+		</div>
+
+	</div>
+
+	<script src="node_modules/animejs/lib/anime.min.js"></script>
+	<script>
+		var logEl = document.querySelector('#quiz-environment');
+
+		document.querySelector('.left').addEventListener('mouseenter', e => {
+		  logEl.classList.add("left")
+		});
+		document.querySelector('.left').addEventListener('mouseleave', e => {
+		  logEl.classList.remove("left")
+		});
+		document.querySelector('.right').addEventListener('mouseenter', e => {
+		  logEl.classList.add("right")
+		});
+		document.querySelector('.right').addEventListener('mouseleave', e => {
+		  logEl.classList.remove("right")
+		});
+
+		var shapes = ["poly.svg", "shapes-leaf.png", "shapes.png"];
+		var chosenShape = shapes[Math.floor(Math.random() * shapes.length)];
+
+		document.querySelector('.poly-left').setAttribute("src", "img/" + chosenShape);
+		document.querySelector('.poly-right').setAttribute("src", "img/" + chosenShape);
+
+
+	</script>
+</body>
+</html>
